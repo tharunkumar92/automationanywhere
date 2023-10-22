@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class IT_Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Create variables
+        double taxableIncome;
+        double taxPaidPerYear;
+        double taxPayablePerMonth;
+
+        // Read Taxable income using Scanner
+        System.out.print("Enter Taxable Income: $");
+        taxableIncome = scanner.nextDouble();
+
+        // Calculate tax based on income
+        if (taxableIncome <= 25000) {
+            // Tax Rate is 0%
+            taxPaidPerYear = 0.0;
+        } else if (taxableIncome <= 50000) {
+            // Tax Rate is 10%
+            taxPaidPerYear = taxableIncome * 0.10;
+        } else if (taxableIncome <= 75000) {
+            // Tax Rate is 20%
+            taxPaidPerYear = taxableIncome * 0.20;
+        } else {
+            // Tax Rate is 30%
+            taxPaidPerYear = taxableIncome * 0.30;
+        }
+
+        // Calculate tax payable per month
+        taxPayablePerMonth = taxPaidPerYear / 12.0;
+
+        // Print results
+        System.out.println("Tax Paid in a Year: $" + taxPaidPerYear);
+        System.out.println("Tax Payable in a Month: $" + taxPayablePerMonth);
+
+        scanner.close();
+    }
+}
+
+
+
+
+
+
+
